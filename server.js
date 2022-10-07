@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express'),
     app = express(),
     mongoose=require('mongoose')
-    port =process.env.PORT;
+    port =process.env.PORT ||5000;
 
 // dataBase
 (async function (){
