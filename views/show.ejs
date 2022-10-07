@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <!-- <%- include('partials/navbar') %> -->
+    <section class="my-5 text-center p-5 container
+    w-50 mx-auto bg-dark text-light">
+        <h2 class="my-5"><%= event.title %></h2>
+        <br>
+            Event Price is <%= event.price %>
+        </a>
+        <hr class="mx-auto w-50">
+        <p>
+            <%= event.description %>
+        </p>
+    </section>
+    <%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <% if(errors.length>0){ %>
+        <div class="alert alert-danger" role="alert">
+            <%=errors[errors.length-1]%>
+          </div>
+            
+        
+    <% } %>
+    <section class="container bg-light text-dark text-center w-50 mx-auto p-4 my-4">
+        <h2> Create Event </h2>
+    </section>
+    <section class="my-5 text-center p-5 container
+        w-50 mx-auto">
+       <form action="/events/create" method="post">
+            <div class="form-group my-3">
+                <label for="title">Event Title</label>
+                <input type="text" id="title" 
+                name="title" class="form-control" placeholder="Event Title">
+            </div>
+            <div class="form-group my-3">
+                <label for="price">Event Price</label>
+                <input type="number" class="form-control" 
+                name="price" id="price" placeholder="Event Price">
+            </div>
+            <div class="form-group my-3">
+                <label for="description">Event Description</label>
+                <textarea name="description" id="description" cols="30" 
+                rows="10" class="form-control" placeholder="Event Description"></textarea>
+            </div>
+            <input type="submit" value="Add Event" class="btn btn-outline-primary">
+       </form>
+    </section>
+    <%- include('partials/footer') %>
+</body>
+</html>

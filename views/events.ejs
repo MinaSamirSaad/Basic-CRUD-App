@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <section class="my-5 text-center p-5 container
+    w-75 mx-auto">
+        <table class="table table-bordered table-hovered table-striped">
+            <thead>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>#</th>
+            </thead>
+            <tbody>
+                <% for(let event of events ){ %>
+                    <tr>
+                        <td><%= event.id %></td>
+                        <td><%= event.title %></td>
+                        <td><%= event.price %></td>
+                        <td><%= event.description %></td>
+                        <td>
+                            <a href="/events/<%= event._id %>" class="btn btn-outline-info">show</a>
+                            <a href="/events/<%= event._id %>/edit" class="btn btn-outline-success">edit</a>
+                            <a href="/events/<%= event._id %>/delete" class="btn btn-outline-danger">delete</a>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </section>
+    <%- include('partials/footer') %>
+</body>
+</html>
